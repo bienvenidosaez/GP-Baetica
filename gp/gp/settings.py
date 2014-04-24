@@ -37,6 +37,12 @@ INSTALLED_APPS = (
     'south',
     'crispy_forms',
 
+    'core',
+
+    'app.dominios',
+    'app.proyectos',
+    'app.tareas',
+
 )
 
 MIDDLEWARE_CLASSES = (
