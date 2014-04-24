@@ -5,6 +5,7 @@ var stripDebug  = require('gulp-strip-debug');
 var uglify      = require('gulp-uglify');
 var jshint      = require('gulp-jshint');
 var stylus      = require('gulp-stylus');
+var minifyCSS   = require('gulp-minify-css');
 
 // JS hint task
 gulp.task('jshint', function() {
@@ -38,6 +39,19 @@ gulp.task('stylus', function () {
         }))
         .pipe(gulp.dest('./css'));
 });
+
+
+var optionsMinifyCSS = {
+  'keepSpecialComments':0
+};
+
+gulp.task('css', function() {
+  gulp.src(['./css/*.css'])
+    .pipe(concat('styles.css'))
+    .pipe(minifyCSS(optionsMinifyCSS))
+    .pipe(gulp.dest('./produccion/css/'));
+});
+
 
 gulp.task('default', ['stylus'], function() {
 // gulp.task('default', ['js', 'stylus'], function() {

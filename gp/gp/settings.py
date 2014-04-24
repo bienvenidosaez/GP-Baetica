@@ -1,8 +1,5 @@
 # -*- encoding: utf-8 -*-
 
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
 from unipath import Path
 PROJECT_DIR = Path(__file__).ancestor(2)
 MEDIA_ROOT = PROJECT_DIR.child("media")
@@ -36,9 +33,12 @@ INSTALLED_APPS = (
     'django_extensions',
     'south',
     'crispy_forms',
+    'tinymce',
+    'mockups',
 
     'core',
 
+    'app.clientes',
     'app.dominios',
     'app.proyectos',
     'app.tareas',
@@ -70,6 +70,8 @@ DATABASES = {
         'NAME': Path(PROJECT_DIR.ancestor(1), 'bd/db.sqlite3'),
     }
 }
+
+print Path(PROJECT_DIR.ancestor(1), 'bd/db.sqlite3')
 
 LANGUAGE_CODE = 'es-es'
 TIME_ZONE = 'Europe/Madrid'
