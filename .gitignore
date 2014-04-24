@@ -29,5 +29,5 @@ Icon
 *.sublime-project
 *.sublime-workspace
 
-app/web/static/bower_component
-app/web/static/node_modules
+gp/app/web/static/bower_component
+gp/app/web/static/node_modules
