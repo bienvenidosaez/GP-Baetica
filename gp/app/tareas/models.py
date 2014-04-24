@@ -19,4 +19,11 @@ class Tarea(Auditoria):
     def __unicode__(self):
         return self.asunto
 
-    descripcion.allow_tags = True
+    def get_descripcion(self):
+        return self.descripcion
+
+    get_descripcion.allow_tags = True
+
+    class Meta:
+        verbose_name = 'Lista de tareas'
+        verbose_name_plural = 'Lista de tareas'
